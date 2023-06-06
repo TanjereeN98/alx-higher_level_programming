@@ -8,14 +8,14 @@ int check_cycle(listint_t *list)
 {
 	listint_t *cur = list, *n = list;
 
-	if (!list)
+	if (!list || !list->next || !list->next->next)
 		return (0);
-	while (cur && n && cur->next)
+	do
 	{
 		cur = cur->next;
 		n = n->next->next;
 		if (cur == n)
 			return (1);
-	}
-	return (0);
+	} while (cur && n && cur != n);
+	return cur == n;
 }
