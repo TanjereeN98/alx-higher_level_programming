@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 for i in range(122, 96, -1):
     if c % 2 != 0:
         c -= 32
