@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "lists.h"
 /**
  * listint_len - length of linked list
@@ -26,7 +27,7 @@ size_t list_len(const listint_t *h)
 
 int is_palindrome(listint_t **head)
 {
-	int x, y, len, sig = 1
+	int x, y, len, sig = 1;
 	listint_t *current = *head;
 	int ints[1024] = {0};
 
@@ -40,7 +41,7 @@ int is_palindrome(listint_t **head)
 	}
 	for (x = 0, y = len - 1 ; y > x && x < len ; x++, y--)
 	{
-		if (arr[x] != arr[y])
+		if (ints[x] != ints[y])
 			sig = 0;
 	}
 	return (sig);
