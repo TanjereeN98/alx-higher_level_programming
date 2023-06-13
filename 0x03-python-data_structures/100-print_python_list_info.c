@@ -4,9 +4,6 @@
  * print_python_list_info - prints some basic info about Python lists
  * @p: pointer PyObject
  */
-<<<<<<< HEAD
-
-=======
 void print_python_list_info(PyObject *p)
 {
 	long int len;
@@ -20,4 +17,3 @@ void print_python_list_info(PyObject *p)
 	for (i = 0; i < len; i++)
 		printf("Element %i: %s\n", i, Py_TYPE(list->ob_item[i])->tp_name);
 }
->>>>>>> 386effa1f63731606892071695db05d5aefd8260
