@@ -8,7 +8,7 @@ void print_python_list_info(PyObject *p)
 {
 	long int len;
 	int i;
-	PyListObject *l_obj;
+	PyListObject *list;
 
 	len = PyList_Size(p);
 	list = (PyListObject *)p;
