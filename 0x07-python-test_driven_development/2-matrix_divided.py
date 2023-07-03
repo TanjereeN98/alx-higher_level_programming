@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Contains the definition of 'matrix_divided' function.
+"""
+
 
 def matrix_divided(matrix, div):
     """
@@ -23,11 +27,10 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if not isinstance(matrix, list) or not all(isinstance(row, list) and all(
-        isinstance(val, (int, float)) for val in row) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            isinstance(val, (int, float)) for val in row) for row in matrix):
+        raise TypeError("matrix must be a matrix
+                        (list of lists) of integers/floats")
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
     return [[round(val/div, 2) for val in row] for row in matrix]
-        
-

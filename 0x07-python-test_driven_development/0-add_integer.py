@@ -4,8 +4,10 @@
 This module tests the add_integer function with mutiple cases
 The function takes two arguments, a and b, and returns their sum.
 """
+
+
 def add_integer(a, b=98):
-    
+
     """adds up 2 integers only
     Returns: sum of 2 integers
     """
