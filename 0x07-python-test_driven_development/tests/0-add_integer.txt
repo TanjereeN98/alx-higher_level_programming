@@ -1,34 +1,49 @@
-#0-add_integer.txt
+0-add_integer:
+"""
+0-add_integer module
 
-===============================
- How to Use 0-add_integer.py
-===============================
+This module defines the add_integer function that adds two integers.
 
-it's very simple and returns the sum of two integers.
+The function takes two arguments, a and b, and returns their sum.
+If either a or b is not an integer, a TypeError is raised.
 
-===============================
+"""
+---------------------
 
 Import ``add_integer`` from ``0-add_integer`` module:
 
     >>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(1, 2)
-3
+Tests:
 
->>> add_integer(100, -2)
-98
+	>>> add_integer(1, 2)
+	3
 
->>> add_integer(2)
-100
+	>>> add_integer(100, -2)
+	98
 
->>> add_integer(100.3, -2)
-98
+	>>> add_integer(2)
+	100
 
->>> add_integer(4, "School")
-Traceback (most recent call):
-TypeError: b must be an integer
+	>>> add_integer(100.3, -2)
+	98
 
->>> add_integer(None)
-Traceback (most recent call):
-TypeError: a must be an integer
-===============================
+	>>> add_integer(4, "School")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(1, "test")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+	>>> add_integer(True, 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
