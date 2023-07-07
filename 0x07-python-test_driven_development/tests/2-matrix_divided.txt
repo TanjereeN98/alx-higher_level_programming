@@ -12,44 +12,43 @@ If either a or b is not an integer, a TypeError is raised.
 
 import ''matrix_divided'' from ''2-matrix_divided'' module:
 
-	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
->>> matrix = [[1, 2, 3], [4, 5, 6]]
-    >>> print(matrix_divided(matrix, 3))
-    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-    >>> print(matrix)
-    [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-# Test case divisor is not a number:
+Test empty list argument:
+	>>> matrix_divided([[]], 2)
+	[[]]
 
-	>>> print(matrix_divided(matrix, True))
-        Traceback (most recent call last):
-        ...
-        TypeError: div must be a number
-
-        >>> print(matrix_divided(matrix, "test"))
-        Traceback (most recent call last):
-        ...
-        TypeError: div must be a number
-
-# Divisor is equal to zero:
-	
-	>>> print(matrix_divided(matrix, 0))
+Test matrix is not lists:
+	>>> matrix_divided([1, 2, 3, 3], 8)
 	Traceback (most recent call last):
-	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test lists in matrix contains strings:
+	>>> matrix_divided([[1, 2, "ahmed", 3], ["mohamed", 2, 3]], 8)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test div is not an int or float:
+	>>> matrix_divided([[1, 2, 3, 4], [1, 2, 3, 4]], "hi")
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Test lists in matrix contains strings:
+	>>> matrix_divided([[1, 2, 4, 3], [1, 2, 3, 4]], 0)
+	Traceback (most recent call last):
 	ZeroDivisionError: division by zero
 
-# Test case matrix contains element not integer nor float:
+Test empty list argument:
+	>>> matrix_divided([[2, 4, 6, 8], [2, 4, 6, 8]], 2)
+	[[1.0, 2.0, 3.0, 4.0], [1.0, 2.0, 3.0, 4.0]]
 
-	>>> matrix = [[1, "test", 3], [4, 5, 6]]
-        >>> print(matrix_divided(matrix, 3))
-        Traceback (most recent call last):
-        ...
-        TypeError: matrix must be a matrix (list of lists) of integers/floats
+Test lists in matrix contains strings:
+	>>> matrix_divided([[1, 2, 4], [1, 2, 3, 4]], 0)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
 
-# Test case where one row not the same size as other rows:
 
-	>>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
-        >>> print(matrix_divided(matrix, 3))
-        Traceback (most recent call last):
-        ...
-        TypeError: Each row of the matrix must have the same size
+
+
+
+
