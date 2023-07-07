@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""print square function"""
+
+
 def print_square(size):
     """
     Prints a square with the character #.

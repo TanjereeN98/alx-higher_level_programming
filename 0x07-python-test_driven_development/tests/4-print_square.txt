@@ -1,6 +1,6 @@
 The ''4-print_square'' Test Module
 ==================================
-Testing print_square function
+Testing "print_square" function
 ---------------------------
 
 >>> print_square = __import__('4-print_square').print_square
