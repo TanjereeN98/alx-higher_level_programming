@@ -51,3 +51,8 @@ class TestMaxInteger(unittest.TestCase):
         """Testing with a list of empty string"""
         result = max_integer('')
         self.assertEqual(result, None)
+
+    def test_list_one_element(self):
+        """Testing with list of one element"""
+        result = max_integer([1])
+        self.assertEqual(result, 1)
