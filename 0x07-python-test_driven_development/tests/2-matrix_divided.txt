@@ -1,5 +1,13 @@
 # Testing matrix_divided(matrix, div) function
+"""
+matrix_divide module
 
+This module test the matrix_divided function that divides two integers.
+
+The function takes two arguments, a and b, and returns their divison.
+If either a or b is not an integer, a TypeError is raised.
+
+"""
 ======================================
 
 import ''matrix_divided'' from ''2-matrix_divided'' module:
