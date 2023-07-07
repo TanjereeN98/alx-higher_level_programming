@@ -8,7 +8,7 @@ Testing "print_square" function
 Testing with normal inputs:
 
 	>>> print_square(0)
-	<BLANKLINE>
+
 
 	>>> print_square(4)
 	####
