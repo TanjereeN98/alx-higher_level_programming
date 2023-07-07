@@ -15,11 +15,4 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)) or isinstance(b, bool):
         raise TypeError("b must be an integer")
-    if not (-1e308 < a < 1e308):
-        raise TypeError("a must not be infinite or NaN")
-    if not (-1e308 < b < 1e308):
-        raise TypeError("b must not be infinite or NaN")
-    a = int(a)
-    b = int(b)
-
-    return a + b
+    return int(a) + int(b)
