@@ -38,3 +38,14 @@ Importing the module
 	Traceback (most recent call last):
 	...
 	TypeError: '<' not supported between instances of 'dict' and 'float'
+
+	>>> ls3 = MyList()
+	>>> ls3.append()
+	Traceback (most recent call last):
+	...
+	TypeError: append() takes exactly one argument (0 given)
+
+	>>> ls3.append((1, 2))
+	>>> ls3.append((1, 1))
+	>>> ls3.print_sorted()
+	[(1, 1), (1, 2)]
