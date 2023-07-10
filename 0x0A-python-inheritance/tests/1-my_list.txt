@@ -83,3 +83,17 @@ Importing the module
 	Traceback (most recent call last):
 	...
 	TypeError: list expected at most 1 argument, got 3
+
+	>>> ls7 = MyList()
+	>>> ls7.append(1)
+	>>> ls7.print_sorted()
+	[1]
+
+	>>> ls8 = MyList()
+	>>> ls8.print_sorted()
+	[]
+
+	>>> ls8.append(1)
+	>>> ls8.append(1)
+	>>> ls8.print_sorted()
+	[1, 1]
