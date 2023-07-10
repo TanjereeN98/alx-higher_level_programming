@@ -97,3 +97,7 @@ Importing the module
 	>>> ls8.append(1)
 	>>> ls8.print_sorted()
 	[1, 1]
+
+	>>> l9 = MyList({"Key" : "Value"})
+	>>> l9.print_sorted()
+	['Key']
