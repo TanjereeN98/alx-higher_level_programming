@@ -1,5 +1,40 @@
 1-my_list.txt
 ==============
 Importing the module
->>>MyList = __import__('1-my_list').MyList
++++++++++++++++++++++++++++++
 
+>>> MyList = __import__('1-my_list').MyList
+
+# Testing with string list:
+	>>> ls = MyList()
+	>>> ls.append("str1")
+	>>> ls.append("str2")
+	>>> ls.append("str3")
+	>>> ls.print_sorted()
+	['str1', 'str2', 'str3']
+
+	>>> ls.append(4)
+	>>> ls.print_sorted()
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'int' and 'str'
+
+	>>> ls2 = MyList()
+	>>> ls2.append(True)
+	>>> ls2.append(False)
+	>>> ls2.print_sorted()
+	[False, True]
+
+	>>> ls2.append(4)
+	>>> ls2.print_sorted()
+	[False, True, 4]
+
+	>>> ls2.append(3.2)
+	>>> ls2.print_sorted()
+	[False, True, 3.2, 4]
+
+	>>> ls2.append({"Aloo" : "Hey"})
+	>>> ls2.print_sorted()
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'dict' and 'float'
