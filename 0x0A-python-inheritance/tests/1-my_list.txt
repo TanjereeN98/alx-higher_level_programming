@@ -101,3 +101,11 @@ Importing the module
 	>>> l9 = MyList({"Key" : "Value"})
 	>>> l9.print_sorted()
 	['Key']
+
+	>>> ls10 = MyList({})
+	>>> ls10.print_sorted()
+	[]
+
+	>>> ls11 = MyList(())
+	>>> ls11.print_sorted()
+	[]
