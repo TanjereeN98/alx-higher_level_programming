@@ -78,3 +78,8 @@ Importing the module
 	>>> ls5 = MyList((3, 2))
 	>>> ls5.print_sorted()
 	[2, 3]
+
+	>>> ls6 = MyList((3, 2), 1, "str")
+	Traceback (most recent call last):
+	...
+	TypeError: list expected at most 1 argument, got 3
