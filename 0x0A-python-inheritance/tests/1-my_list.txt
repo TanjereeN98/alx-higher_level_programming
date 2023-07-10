@@ -49,3 +49,32 @@ Importing the module
 	>>> ls3.append((1, 1))
 	>>> ls3.print_sorted()
 	[(1, 1), (1, 2)]
+
+	>>> ls3.append("str1")
+	>>> ls3.print_sorted()
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'str' and 'tuple'
+
+	>>> ls4 = MyList(4)
+	Traceback (most recent call last):
+	...
+	TypeError: 'int' object is not iterable
+
+	>>> ls4 = MyList(True)
+	Traceback (most recent call last):
+	...
+	TypeError: 'bool' object is not iterable
+
+	>>> ls4 = MyList("str")
+	>>> ls4.print_sorted()
+	['r', 's', 't']
+
+	>>> ls5 = MyList(3.2)
+	Traceback (most recent call last):
+	...
+	TypeError: 'float' object is not iterable
+
+	>>> ls5 = MyList((3, 2))
+	>>> ls5.print_sorted()
+	[2, 3]
