@@ -1,7 +1,5 @@
 #!/usr/bin/python
-"""Re a function that reads a text file (UTF8)
-    and prints it to stdout:
-"""
+"""read_file function"""
 
 
 def read_file(filename=""):
