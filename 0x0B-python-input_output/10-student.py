@@ -17,5 +17,6 @@ class Student:
             return _dict
         new_dict = {}
         for key in attrs:
-            new_dict[key] = _dict.get(key)
+            if _dict.get(key):
+                new_dict[key] = _dict.get(key)
         return new_dict
