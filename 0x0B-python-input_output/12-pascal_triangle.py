@@ -16,4 +16,3 @@ def pascal_triangle(n):
         tmp.append(1)
         tris.append(tmp)
     return tris
-
