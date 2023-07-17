@@ -34,6 +34,9 @@ class Base:
         """writes JSON string representation of list_objs to a file"""
         filename = cls.__name__+".json"
         with open(filename, 'w') as f:
+            if not list_objs:
+                json.dump([], f)
+                return
             json.dump([obj.to_dictionary() for obj in list_objs], f)
 
     @classmethod
