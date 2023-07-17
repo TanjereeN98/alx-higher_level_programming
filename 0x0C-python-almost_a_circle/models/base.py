@@ -37,7 +37,8 @@ class Base:
             if not list_objs:
                 json.dump([], f)
                 return
-            json.dump([obj.to_dictionary() for obj in list_objs], f)
+            json.dump([json.loads(cls.to_json_string(obj.to_dictionary()))
+                      for obj in list_objs], f)
 
     @classmethod
     def create(cls, **dictionary):
