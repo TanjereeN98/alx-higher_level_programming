@@ -6,6 +6,6 @@ LEFT JOIN (
     FROM tv_show_genres AS tsg
     JOIN tv_shows AS ts ON ts.id = tsg.show_id
     WHERE ts.name = 'Dexter'
-) ON tg.id = tsg.genre_id
-WHERE tsg.genre_id IS NULL
+) AS dexter_genres ON tg.id = dexter_genres.genre_id
+WHERE dexter_genres.genre_id IS NULL
 ORDER BY tg.name;
