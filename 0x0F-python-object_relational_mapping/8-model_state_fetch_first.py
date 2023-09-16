@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""prints the first State object from the database"""
+"""prints the first State object from the database hbtn_0e_6_usa"""
 
 
 import sys
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).order_by(State.id).filter_by(id=1)
+    result = session.query(State).order_by(State.id).filter_by(id=1).first()
     if result:
         print("{}: {}".format(result.id, result.name))
     else:
