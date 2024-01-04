@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Rectangle module"""
+"""Rectangle Module"""
 
 
 class Rectangle:
-    """Rectangle representaion"""
+    """Rectangle class"""
 
     def __init__(self, width=0, height=0):
-        """intialize width and geight"""
-        self.width = width
-        self.height = height
+        """Instantiation"""
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
