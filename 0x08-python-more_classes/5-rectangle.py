@@ -63,3 +63,7 @@ class Rectangle:
     def __repr__(self):
         """Object formal print format"""
         return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Prints when object is deleted"""
+        print("Bye rectangle...")
