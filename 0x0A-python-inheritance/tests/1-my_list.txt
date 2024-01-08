@@ -20,6 +20,16 @@ MyList Class has a public instace method: def print_sorted(self): that prints th
 
 ::
 
+>>> lst.append(1)
+>>> lst.append(4)
+>>> lst.append(2)
+>>> lst.append(3)
+>>> lst.append(5)
+>>> lst.print_sorted()
+[1, 2, 3, 4, 5]
+
+::
+
 >>> lst = MyList([13, 1, 0, 3, -2, 5])
 >>> lst.print_sorted()
 [-2, 0, 1, 3, 5, 13]
