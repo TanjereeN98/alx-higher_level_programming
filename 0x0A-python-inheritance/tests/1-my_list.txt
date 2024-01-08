@@ -30,9 +30,15 @@ MyList Class has a public instace method: def print_sorted(self): that prints th
 
 ::
 
+>>> my_list[4] = 6
+>>> print(my_list)
+[1, 4, 2, 3, 6]
+
+::
+
 >>> lst.remove(1)
 >>> lst.print_sorted()
-[2, 3, 4, 5]
+[2, 3, 4, 5, 6]
 
 ::
 
