@@ -99,6 +99,25 @@ class HBNBCommand(cmd.Cmd):
         del storage.all()[f'{args[0]}.{args[1]}']
         storage.save()
     
+    """
+    def do_all(self, args):
+        args = args.split()
+        objs = []
+        if not args:
+            for obj in storage.all().values():
+                objs.append(str(obj))
+            print(objs)
+            return
+        if args[0] not in globals():
+            print(" class doesn't exist ")
+            return
+        objs = globals()[args[0]].all()
+        objs_list = []
+        for obj in objs.values():
+            objs_list.append(str(obj))
+        print(objs_list)
+    
+    """
     def do_all(self, args):
         if not args:
             print([str(obj) for obj in storage.all().values()])
@@ -114,6 +133,11 @@ class HBNBCommand(cmd.Cmd):
         print(out_list)
 
     def do_update(self, args):
+        """
+        Updates an instance based on the class name and id by adding
+        or updating attribute (save the change into the JSON file).
+        Ex: $ update
+        """
         if not args:
             print("** class name missing **")
             return
@@ -147,7 +171,19 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, args[2], new_value)
                 storage.save()
                 return
-        
+
+    def do_count(self, args):
+        """retrieve the number of instances of a class: <class name>.count()."""
+        if not args:
+            print("** class doesn't exist **")
+        objects = storage.all()
+        args = args.split()
+        count = 0
+        for obj in objects.values():
+            if args[0] == obj.__class__.__name__:
+                count += 1
+        print(count)
+
     def default(self, line):
         """
         handle dot notaion commands
@@ -160,6 +196,13 @@ class HBNBCommand(cmd.Cmd):
                 
             if method == 'all()':
                 self.do_all(cls)
+            if method == 'count()':
+                self.do_count(cls)
+                """count = 0
+                for item in objects.values():
+                    if cls == item.__class__.__name__:
+                        count += 1
+                print(count)"""
                 
 
 
