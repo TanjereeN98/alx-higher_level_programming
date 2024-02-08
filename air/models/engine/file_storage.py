@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """FileStorage Module"""
 import json
+from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -32,7 +34,10 @@ class FileStorage:
         otherwise, do nothing. If the file doesn’t exist, no exception should be raised)"""
         try:
             with open(FileStorage.__file_path) as fp:
-                FileStorage.__objects = json.load(fp)
+                data = json.load(fp)
+            for k, v in data.items():
+                cls_name = v['__class__']
+                self.__objects[k] = eval(f"{cls_name}(**{v})")
         except FileNotFoundError:
             pass
 
