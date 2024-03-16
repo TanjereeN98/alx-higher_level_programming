@@ -4,6 +4,7 @@
 
 import sys
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -15,6 +16,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.id == 2)
-    state.name = "New Mexico"
-    session.commit()
+    cities = session.query(City).order_by(City.id)
+    state = session.query(State)
+    for city in cities:
+        state = session.query(State).filter(State.id == city.state_id).first()
+        print(f"{state.name}: ({city.id}) {city.name}")
