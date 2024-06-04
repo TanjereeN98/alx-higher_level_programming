@@ -7,7 +7,7 @@ const fs = require('node:fs');
 
 request(`${requestedUrl}`, function (error, response, body) {
   if (error) {
-    console.error('error:', error && error);
+    console.error('error:', error);
   }
   fs.writeFile(filePath, body, 'utf8', err => {
     if (err) {
