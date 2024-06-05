@@ -9,9 +9,9 @@ request(`${apiUrl}`, function (error, response, body) {
   }
   const myData = JSON.parse(body);
   const result = {};
-  myData.map(todo => {
-    if (todo.completed) {
-      result[todo.userId] = (result[todo.userId] || 0) + 1;
+  myData.forEach(element => {
+    if (element.completed) {
+      result[element.userId] = (result[element.userId] || 0) + 1;
     }
     return result;
   });
